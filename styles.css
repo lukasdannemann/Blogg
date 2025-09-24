@@ -1,0 +1,69 @@
+body{
+    font-family: Karla, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: cadetblue;
+    color: white;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem;
+    max-width: 30rem;
+}
+
+h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-buttons button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.post-buttons button:hover{
+    color: red;
+    transition: 0.15s; 
+}
+.post-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;   /* Gör containern lika bred som sin förälder */
+}
+
