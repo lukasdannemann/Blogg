@@ -12,7 +12,7 @@ function renderPosts() {
   // Funktion för att visa alla inlägg på sidan
   postsContainer.innerHTML = "";
 
-  posts.forEach((post) => {
+  posts.forEach((post, index) => {
     // Skapar HTML-element för varje inlägg, lägger in dem i postsContainer och ger dem klassnamn
     // för CSS
     const postDiv = document.createElement("div");
@@ -45,27 +45,42 @@ function renderPosts() {
 
     const likeButton = document.createElement("button");
     const likeIcon = document.createElement("i");
-    likeIcon.className = "fa-regular fa-heart fa-lg"; // Exempel med Font Awesome
+    likeIcon.className = "fa-regular fa-heart fa-lg";
     likeButton.appendChild(likeIcon);
     postButtons.appendChild(likeButton);
 
+    let liked = false;
     likeButton.addEventListener("click", function() {
-        if (likeIcon.classList.contains("fa-regular")) {
-            likeIcon.classList.remove("fa-regular");
-            likeIcon.classList.add("fa-solid");
-            likeIcon.style.color = "red";
-        } else {
-            likeIcon.classList.remove("fa-solid");
-            likeIcon.classList.add("fa-regular");
-            likeIcon.style.color = "";
-        }
+
+      if (!liked) {
+        liked = true;
+
+        likeIcon.classList.remove("fa-regular");
+        likeIcon.classList.add("fa-solid");
+        likeIcon.style.color = "red";
+      }
+
+      else {
+        liked = false;
+
+        likeIcon.classList.remove("fa-solid");
+        likeIcon.classList.add("fa-regular");
+        likeIcon.style.color = "";
+      }
     });
 
+    
     const deleteButton = document.createElement("button");
     const deleteIcon = document.createElement("i");
     deleteIcon.className = "fa-solid fa-trash-can fa-lg"; // Exempel med Font Awesome
     deleteButton.appendChild(deleteIcon);
     postButtons.appendChild(deleteButton);
+    
+    deleteButton.addEventListener("click", () =>{
+      //Tar bort inlägget beroende på index
+      posts.splice(index, 1);
+      renderPosts();
+    });
 
     postDiv.appendChild(postTitle);
     postDiv.appendChild(authorTextDiv);

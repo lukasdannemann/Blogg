@@ -92,6 +92,19 @@ main{
     line-height: 1.5;
 }
 
+.postButtons button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-right: 0.3rem;
+}
+
+.postButtons button:hover{
+    color: red;
+    transition: all 0.15s ease;
+}
+
 .inputContainer h1{
     margin: 2rem 0;
 }
