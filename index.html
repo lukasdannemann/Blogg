@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,13 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Blogg</title>
   </head>
   <body>
@@ -18,44 +23,32 @@
       <h1>Blogg</h1>
     </header>
     <main>
-      <form action="post">
-        <h2>Skriv ett nytt inlägg!</h2>
-        <div class="form-group">
-          <label for="name">Namn:</label>
-          <input type="text" id="name" name="name" required />
-        </div>
+      <section class="inputContainer">
+        <h1>Skriv ett nytt inlägg!</h1>
+        <form action="#" class="postForm">
 
-        <div class="form-group">
-          <label for="title">Titel:</label>
-          <input type="text" id="title" name="title" required />
-        </div>
-        <textarea
-          id="post"
-          name="post"
-          rows="4"
-          placeholder="Skriv ditt inlägg här..."
-          required
-        ></textarea>
-        <button type="submit">Skicka</button>
-      </form>
-      <div id="posts" class="posts">
-        <div>
-          <h2 id="post-title">mitt inlägg</h2>
-          <span id="post-author">Lukas dannemann</span>
-          <p id="post-content">
-            Detta är innehållet i mitt inlägg. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. A, iure minima suscipit nihil odio
-            illum ullam ut quia cumque iusto atque qui aspernatur facere ducimus
-            maxime tempora corporis eligendi eum? Dolorem illum soluta optio
-            officiis?
-          </p>
-          
-        </div>
-        <div id="post-buttons" class="post-buttons">
-            <button id="like-post" class="like-post"><i class="fa-regular fa-heart fa-lg"></i></button>
-            <button class="delete-post"><i class="fa-solid fa-trash-can fa-lg"></i></button>
-        </div>
-      </div>
+          <div class="inputInfo">
+
+            <div class="inputField">
+              <label for="title">Titel</label>
+              <input type="text" id="title" name="title" placeholder="Skriv en titel här..." />
+            </div>
+            <div class="inputField">
+              <label for="author">Författare</label>
+              <input type="text" id="author" name="author" placeholder="Skriv ditt namn här..." />
+            </div>
+            <div class="inputField">
+              <label for="content">Inlägg</label>
+              <textarea id="content" name="content" rows="4" placeholder="Skriv ditt inlägg här..."></textarea>
+            </div>
+
+            <div class="submitButton">
+              <button type="submit" id="submit-btn">Publicera</button>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section class="postsContainer" id="posts-container"></section>
     </main>
   </body>
   <script src="script.js"></script>
