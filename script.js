@@ -75,7 +75,7 @@ function renderPosts() {
     //Raderaknapp som agerar vid klick på ikonen
     const deleteButton = document.createElement('button');
     const deleteIcon = document.createElement('i');
-    deleteIcon.className = 'fa-solid fa-trash-can fa-lg'; // Exempel med Font Awesome
+    deleteIcon.className = 'fa-solid fa-trash-can fa-lg';
     deleteButton.appendChild(deleteIcon);
     postButtons.appendChild(deleteButton);
     
@@ -128,7 +128,7 @@ function renderPosts() {
       commentSection.style.display =
       commentSection.style.display === 'none' ? 'block' : 'none';
     });
-
+    //Skickar in kommentaren på inlägget
     commentForm.addEventListener('submit', (e) =>{
       e.preventDefault();
 
